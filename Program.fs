@@ -1,5 +1,5 @@
 ﻿open System
-
+#if __MACOS__
 open AppKit
 open CoreGraphics
 open type AppKit.NSWindowStyle
@@ -17,3 +17,6 @@ NSApplication.SharedApplication.Delegate <- {
 }
 
 NSApplication.Main(Environment.GetCommandLineArgs())
+#else
+printfn "HELLO WORLD"
+#endif
